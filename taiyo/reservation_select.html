@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Property</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="#" class="brand-link">
+                <span class="brand-text font-weight-light">Reservation System</span>
+            </a>
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+                        <li class="nav-item">
+                            <a href="/demo/taiyo/dashboard.html" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>ダッシュボード</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/demo/taiyo/reservation_select.html" class="nav-link active">
+                                <i class="nav-icon fas fa-building"></i>
+                                <p>予約カレンダー</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h1 class="text-dark">物件選択</h1>
+                </div>
+            </div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="property-form">
+                                <div class="form-group">
+                                    <label for="property-select">物件を選択してください</label>
+                                    <select id="property-select" class="form-control">
+                                        <option value="property1">○○マンション</option>
+                                        <option value="property2">△△マンション</option>
+                                        <option value="property3">□□アパートメント</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="submit-button">決定</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function () {
+            const selectedProperty = document.getElementById('property-select').value;
+            window.location.href = `/demo/taiyo/reservation_calendar.html?property=${selectedProperty}`;
+        });
+    </script>
+</body>
+</html>

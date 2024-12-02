@@ -15,14 +15,14 @@
     <div class="wrapper">
         <!-- Sidebar -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="/demo.github.io/taiyo/dashboard.html" class="brand-link">
+            <a href="/demo/taiyo/dashboard.html" class="brand-link">
                 <span class="brand-text font-weight-light">Reservation System</span>
             </a>
             <div class="sidebar">
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
-                        <li class="nav-item"><a href="/demo.github.io/taiyo/dashboard.html" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i><p>Dashboard</p></a></li>
-                        <li class="nav-item"><a href="/demo.github.io/taiyo/reservation_calendar.html" class="nav-link"><i class="nav-icon fas fa-calendar-alt"></i><p>Reservation Calendar</p></a></li>
+                        <li class="nav-item"><a href="/demo/taiyo/dashboard.html" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i><p>ダッシュボード</p></a></li>
+                        <li class="nav-item"><a href="/demo/taiyo/reservation_select.html" class="nav-link"><i class="nav-icon fas fa-calendar-alt"></i><p>予約カレンダー</p></a></li>
                     </ul>
                 </nav>
             </div>
@@ -32,7 +32,7 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <h1 class="text-dark">Reservation Calendar</h1>
+                    <h1 class="text-dark">予約カレンダー</h1>
                 </div>
             </div>
             <section class="content">
@@ -62,7 +62,13 @@
                 },
                 events: [
                     { title: '3 reservations', start: '2024-11-25' },
-                    { title: '2 reservations', start: '2024-11-26' }
+                    { title: '2 reservations', start: '2024-11-26' },
+                    { title: '3 reservations', start: '2024-12-01' },
+                    { title: '2 reservations', start: '2024-11-04' },
+                    { title: '3 reservations', start: '2024-12-05' },
+                    { title: '2 reservations', start: '2024-11-06' },
+                    { title: '3 reservations', start: '2024-12-07' },
+                    { title: '2 reservations', start: '2024-11-09' }
                 ],
                 dateClick: function (info) {
                     window.location.href = `reservation_detail.html?date=${info.dateStr}`;

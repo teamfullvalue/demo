@@ -18,23 +18,23 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <h1 class="text-dark">Delete Reservation</h1>
+                    <h1 class="text-dark">予約削除</h1>
                 </div>
             </div>
             <section class="content">
                 <div class="container-fluid">
                     <div class="card card-danger">
                         <div class="card-body text-center">
-                            <p>Are you sure you want to delete the following reservation?</p>
+                            <p>本当に削除しますか?</p>
                             <ul class="list-unstyled">
-                                <li><strong>Room Number:</strong> 101</li>
-                                <li><strong>Reservation Type:</strong> 午前</li>
-                                <li><strong>Event:</strong> Annual Inspection</li>
+                                <li><strong>部屋番号:</strong> 101</li>
+                                <li><strong>予約区分:</strong> 午前</li>
+                                <li><strong>案件:</strong> Annual Inspection</li>
                             </ul>
                             <form action="/reservations/delete/1" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                <button type="submit" class="btn btn-danger">削除</button>
                             </form>
-                            <a href="/demo.github.io/taiyo/reservation_calendar.html" class="btn btn-secondary">Cancel</a>
+                            <a href="/demo/taiyo/reservation_calendar.html" class="btn btn-secondary">キャンセル</a>
                         </div>
                     </div>
                 </div>
