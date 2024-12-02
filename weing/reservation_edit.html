@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予約編集画面</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            background-color: #343a40;
+            min-height: 100vh;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- サイドメニュー -->
+        <div class="sidebar">
+            <a href="/demo.github.io/weing/admin_dashboard.html">ダッシュボード</a>
+            <a href="/demo.github.io/weing/company_management.html">作業会社管理</a>
+            <a href="/demo.github.io/weing/schedule_management.html">スケジュール管理</a>
+            <a href="/demo.github.io/weing/reservation_management.html">予約管理</a>
+            <a href="/demo.github.io/weing/change_history.html">変更履歴</a>
+        </div>
+
+        <!-- メインコンテンツ -->
+        <div class="content">
+            <h3 class="text-success">予約編集</h3>
+            <form action="/edit-reservation/1" method="post">
+                <div class="mb-3">
+                    <label for="customerName" class="form-label">客先名</label>
+                    <input type="text" class="form-control" id="customerName" name="customerName" value="山田太郎" required>
+                </div>
+                <div class="mb-3">
+                    <label for="customerAddress" class="form-label">住所</label>
+                    <input type="text" class="form-control" id="customerAddress" name="customerAddress" value="東京都新宿区" required>
+                </div>
+                <div class="mb-3">
+                    <label for="customerPhone" class="form-label">電話番号</label>
+                    <input type="text" class="form-control" id="customerPhone" name="customerPhone" value="090-1234-5678" required>
+                </div>
+                <div class="mb-3">
+                    <label for="scheduleId" class="form-label">作業会社</label>
+                    <select class="form-select" id="scheduleId" name="scheduleId" required>
+                        <option value="1" selected>作業会社A</option>
+                        <option value="2">作業会社B</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="startTime" class="form-label">開始時間</label>
+                    <input type="datetime-local" class="form-control" id="startTime" name="startTime" value="2024-12-01T10:00" required>
+                </div>
+                <div class="mb-3">
+                    <label for="endTime" class="form-label">終了時間</label>
+                    <input type="datetime-local" class="form-control" id="endTime" name="endTime" value="2024-12-01T11:00" required>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">状態</label>
+                    <select class="form-select" id="status" name="status" required>
+                        <option value="confirmed" selected>確定</option>
+                        <option value="pending">受付済み</option>
+                        <option value="cancelled">キャンセル</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success w-100">保存</button>
+            </form>
+            <a href="/demo.github.io/weing/reservation_management.html" class="btn btn-secondary mt-3">戻る</a>
+        </div>
+    </div>
+</body>
+</html>

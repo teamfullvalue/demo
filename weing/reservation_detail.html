@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminLTE風レイアウト</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            background-color: #343a40;
+            min-height: 100vh;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="sidebar">
+            <h4 class="text-center text-light">管理メニュー</h4>
+            <a href="/demo.github.io/weing/admin_dashboard.html">ダッシュボード</a>
+            <a href="/demo.github.io/weing/company_management.html">作業会社管理</a>
+            <a href="/demo.github.io/weing/schedule_management.html">スケジュール管理</a>
+            <a href="/demo.github.io/weing/reservation_management.html">予約管理</a>
+            <a href="/demo.github.io/weing/change_history.html">変更履歴</a>
+        </div>
+        <div class="content">
+            <div class="content">
+                <h3 class="text-success">予約詳細</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">山田太郎</h5>
+                        <p class="card-text">
+                            <strong>作業会社:</strong> 作業会社A<br>
+                            <strong>開始時間:</strong> 2024-12-01 10:00<br>
+                            <strong>終了時間:</strong> 2024-12-01 11:00<br>
+                            <strong>住所:</strong> 東京都新宿区<br>
+                            <strong>電話番号:</strong> 090-1234-5678<br>
+                            <strong>状態:</strong> 確定
+                        </p>
+                        <a href="/demo.github.io/weing/reservation_edit.html" class="btn btn-warning">編集</a>
+                        <button class="btn btn-danger">キャンセル</button>
+                    </div>
+                </div>
+                <a href="/demo.github.io/weing/reservation_management.html" class="btn btn-secondary mt-3">戻る</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

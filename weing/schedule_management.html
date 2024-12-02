@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminLTE風レイアウト</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            background-color: #343a40;
+            min-height: 100vh;
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="sidebar">
+            <h4 class="text-center text-light">管理メニュー</h4>
+            <a href="/demo.github.io/weing/admin_dashboard.html">ダッシュボード</a>
+            <a href="/demo.github.io/weing/company_management.html">作業会社管理</a>
+            <a href="/demo.github.io/weing/schedule_management.html">スケジュール管理</a>
+            <a href="/demo.github.io/weing/reservation_management.html">予約管理</a>
+            <a href="/demo.github.io/weing/change_history.html">変更履歴</a>
+        </div>
+        <div class="content">
+            <div class="content">
+                <h3 class="text-success">スケジュール管理</h3>
+                <table class="table table-striped">
+                    <thead class="bg-success text-white">
+                        <tr>
+                            <th>ID</th>
+                            <th>作業会社</th>
+                            <th>開始時間</th>
+                            <th>終了時間</th>
+                            <th>作業枠</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>作業会社A</td>
+                            <td>2024-12-01 09:00</td>
+                            <td>2024-12-01 18:00</td>
+                            <td>3</td>
+                            <td>
+                                <a href="/demo.github.io/weing/schedule_edit.html" class="btn btn-sm btn-warning">編集</a>
+                                <button class="btn btn-sm btn-danger">削除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="/demo.github.io/weing/schedule_add.html" class="btn btn-success mt-3">新規登録</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
