@@ -20,7 +20,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
                         <li class="nav-item"><a href="/demo/taiyo/dashboard.html" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i><p>ダッシュボード</p></a></li>
-                        <li class="nav-item"><a href="/demo/taiyo/property_list.html" class="nav-link"><i class="nav-icon fas fa-history"></i><p>物件管理</p></a></li>
+                        <li class="nav-item"><a href="/demo/taiyo/property_list.html" class="nav-link"><i class="nav-icon fas fa-building"></i><p>物件管理</p></a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +37,7 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <form action="/properties/create" method="post">
+                            <form action="/properties/create" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="property_name">物件名</label>
                                     <input type="text" class="form-control" id="property_name" name="property_name" required>
@@ -46,6 +46,14 @@
                                     <label for="address">住所</label>
                                     <input type="text" class="form-control" id="address" name="address" required>
                                 </div>
+                                
+                                <!-- ファイルアップロード -->
+                                <div class="form-group">
+                                    <label for="files">ファイルを追加</label>
+                                    <input type="file" class="form-control" id="files" name="files[]" multiple>
+                                    <small class="form-text text-muted">複数のファイルを選択できます。</small>
+                                </div>
+
                                 <button type="submit" class="btn btn-primary">保存</button>
                                 <a href="/demo/taiyo/property_list.html" class="btn btn-secondary">キャンセル</a>
                             </form>

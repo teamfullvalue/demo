@@ -20,7 +20,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
                         <li class="nav-item"><a href="/demo/taiyo/dashboard.html" class="nav-link"><i class="nav-icon fas fa-tachometer-alt"></i><p>ダッシュボード</p></a></li>
-                        <li class="nav-item"><a href="/demo/taiyo/property_list.html" class="nav-link"><i class="nav-icon fas fa-building"></i><p>物件管理</p></a></li>
+                        <li class="nav-item"><a href="/demo/taiyo/property_list.html" class="nav-link active"><i class="nav-icon fas fa-building"></i><p>物件管理</p></a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +37,7 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <a href="/demo/taiyo/property_create.html" class="btn btn-primary"><i class="fas fa-plus"></i>物件新規作成</a>
+                            <a href="/demo/taiyo/property_create.html" class="btn btn-primary"><i class="fas fa-plus"></i> 物件新規作成</a>
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered table-striped">
@@ -46,6 +46,7 @@
                                         <th>#</th>
                                         <th>物件名</th>
                                         <th>住所</th>
+                                        <th>ファイル</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,11 @@
                                         <td>1</td>
                                         <td>Sunshine Apartments</td>
                                         <td>123 Main Street</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm view-files" data-files="['file1.pdf', 'file2.docx']">
+                                                <i class="fas fa-folder-open"></i> 表示
+                                            </button>
+                                        </td>
                                         <td>
                                             <a href="/demo/taiyo/property_edit.html?id=1" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> 編集</a>
                                             <a href="/demo/taiyo/property_delete.html?id=1" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> 削除</a>
@@ -64,8 +70,13 @@
                                         <td>Greenwood Estates</td>
                                         <td>456 Elm Street</td>
                                         <td>
-                                            <a href="/demo/taiyo/property_edit.html?id=2" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>編集</a>
-                                            <a href="/demo/taiyo/property_delete.html?id=2" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>削除</a>
+                                            <button class="btn btn-info btn-sm view-files" data-files="['image1.png', 'manual.pdf']">
+                                                <i class="fas fa-folder-open"></i> 表示
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <a href="/demo/taiyo/property_edit.html?id=2" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> 編集</a>
+                                            <a href="/demo/taiyo/property_delete.html?id=2" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> 削除</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -76,6 +87,40 @@
             </section>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+
+    <!-- Modal for File List -->
+    <div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileModalLabel">ファイル一覧</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="file-list" class="list-group"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).on('click', '.view-files', function() {
+            const files = JSON.parse($(this).data('files'));
+            const fileList = $('#file-list');
+            fileList.empty();
+            files.forEach(file => {
+                fileList.append(`<li class="list-group-item"><a href="/uploads/${file}" target="_blank">${file}</a></li>`);
+            });
+            $('#fileModal').modal('show');
+        });
+    </script>
 </body>
 </html>

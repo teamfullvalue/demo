@@ -37,7 +37,7 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <form action="/properties/edit/1" method="post">
+                            <form action="/properties/edit/1" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="property_name">物件名</label>
                                     <input type="text" class="form-control" id="property_name" name="property_name" value="Sunshine Apartments" required>
@@ -46,6 +46,33 @@
                                     <label for="address">住所</label>
                                     <input type="text" class="form-control" id="address" name="address" value="123 Main Street" required>
                                 </div>
+
+                                <!-- ファイルリスト -->
+                                <div class="form-group">
+                                    <label>既存ファイル</label>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <a href="/uploads/file1.pdf" target="_blank">file1.pdf</a>
+                                            <button type="button" class="btn btn-danger btn-sm float-right delete-file" data-file="file1.pdf">
+                                                <i class="fas fa-trash"></i> 削除
+                                            </button>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="/uploads/file2.docx" target="_blank">file2.docx</a>
+                                            <button type="button" class="btn btn-danger btn-sm float-right delete-file" data-file="file2.docx">
+                                                <i class="fas fa-trash"></i> 削除
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- ファイルアップロード -->
+                                <div class="form-group">
+                                    <label for="files">ファイルを追加</label>
+                                    <input type="file" class="form-control" id="files" name="files[]" multiple>
+                                    <small class="form-text text-muted">複数のファイルを選択できます。</small>
+                                </div>
+
                                 <button type="submit" class="btn btn-primary">保存</button>
                                 <a href="/demo/taiyo/property_list.html" class="btn btn-secondary">キャンセル</a>
                             </form>
@@ -55,6 +82,19 @@
             </section>
         </div>
     </div>
+
+    <!-- AdminLTE JS -->
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <script>
+        document.querySelectorAll('.delete-file').forEach(button => {
+            button.addEventListener('click', function () {
+                const fileName = this.dataset.file;
+                if (confirm(`${fileName} を削除しますか？`)) {
+                    // ファイル削除のAPI呼び出しやフォーム更新処理を実装
+                    alert(`${fileName} が削除されました（デモ用アラート）。`);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
